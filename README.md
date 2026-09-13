@@ -39,9 +39,25 @@ The installer offers two optional tick boxes:
 - **Start Notchpoint when I sign in to Windows.**
 - **Install Claude Code session hooks.** Off by default, because it edits `settings.json`, where your own hooks live. It is append-only, backs the file up first, and uninstalling removes only its own entries.
 
-### winget
+### With Scoop
 
-Not yet. The manifests are written and validated, in [`winget/`](winget), but a package only becomes installable by name once Microsoft accepts it into their index, which is a separate review. `winget install JKC.Notchpoint` will start working when that lands.
+If you use [Scoop](https://scoop.sh):
+
+```bash
+scoop bucket add notchpoint https://github.com/iamprincejkc/Notchpoint
+scoop install notchpoint
+```
+
+Scoop installs it portably, so it lives under `~\scoop\apps\notchpoint` with no Apps & Features entry.
+`scoop update notchpoint` picks up new releases, and `scoop uninstall notchpoint` removes it.
+
+Your settings stay in `%APPDATA%\Notchpoint` either way, so they survive both.
+
+### With winget
+
+Not yet.
+The manifests are written and validated, in [`winget/`](winget), but a package only becomes installable by name once Microsoft accepts it into their index, which is a separate review.
+`winget install JKC.Notchpoint` will start working when that lands.
 
 ## First run
 
@@ -87,6 +103,7 @@ You can change the notch size, which providers get a ring, whether it starts wit
 ## Uninstall
 
 Apps & Features, or the **Uninstall Notchpoint** shortcut in the Start menu.
+If you installed it with Scoop, use `scoop uninstall notchpoint` instead.
 
 Your settings at `%APPDATA%\Notchpoint` are kept on purpose, and the uninstaller tells you where they are.
 Delete that folder by hand if you want them gone.
