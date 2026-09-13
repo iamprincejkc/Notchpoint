@@ -8,6 +8,7 @@ PublisherSupportUrl: https://github.com/iamprincejkc/Notchpoint/issues
 PackageName: Notchpoint
 PackageUrl: https://github.com/iamprincejkc/Notchpoint
 License: Proprietary
+LicenseUrl: https://github.com/iamprincejkc/Notchpoint/blob/main/LICENSE.md
 Copyright: Copyright (c) 2026 JKC
 ShortDescription: A notch for Windows 11 showing how much of your Claude, ChatGPT and Gemini usage is left.
 Description: |-
