@@ -26,15 +26,7 @@ It also knows whether Claude Code is **working** or **waiting on you**, and spin
 
 ## Install
 
-### With winget
-
-```bash
-winget install JKC.Notchpoint
-```
-
-### Direct download
-
-Grab the latest `NotchpointSetup-x.y.z.exe` from the [Releases page](https://github.com/iamprincejkc/Notchpoint/releases/latest) and run it.
+Download the latest `NotchpointSetup-x.y.z.exe` from the [Releases page](https://github.com/iamprincejkc/Notchpoint/releases/latest) and run it.
 
 One file, about 11 MB, nothing else to install.
 There is no .NET runtime or other prerequisite, because the app is compiled ahead of time to native code.
@@ -46,6 +38,10 @@ The installer offers two optional tick boxes:
 
 - **Start Notchpoint when I sign in to Windows.**
 - **Install Claude Code session hooks.** Off by default, because it edits `settings.json`, where your own hooks live. It is append-only, backs the file up first, and uninstalling removes only its own entries.
+
+### winget
+
+Not yet. The manifests are written and validated, in [`winget/`](winget), but a package only becomes installable by name once Microsoft accepts it into their index, which is a separate review. `winget install JKC.Notchpoint` will start working when that lands.
 
 ## First run
 
@@ -90,11 +86,7 @@ You can change the notch size, which providers get a ring, whether it starts wit
 
 ## Uninstall
 
-Apps & Features, or the Start menu shortcut, or:
-
-```bash
-winget uninstall JKC.Notchpoint
-```
+Apps & Features, or the **Uninstall Notchpoint** shortcut in the Start menu.
 
 Your settings at `%APPDATA%\Notchpoint` are kept on purpose, and the uninstaller tells you where they are.
 Delete that folder by hand if you want them gone.
