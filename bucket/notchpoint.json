@@ -1,0 +1,36 @@
+{
+    "version": "0.2.1",
+    "description": "A notch for Windows 11 showing how much of your Claude, ChatGPT and Gemini usage is left.",
+    "homepage": "https://github.com/iamprincejkc/Notchpoint",
+    "license": "Proprietary",
+    "notes": [
+        "Notchpoint runs from the tray. Start it from the Start menu shortcut, or run 'notchpoint'.",
+        "Settings live in %APPDATA%\\Notchpoint and survive updates and uninstall.",
+        "To start it with Windows, open Settings from the tray icon and tick the box.",
+        "Scoop installs it portably, so there is no Apps & Features entry. Use 'scoop uninstall notchpoint'."
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/iamprincejkc/Notchpoint/releases/download/v0.2.1/NotchpointSetup-0.2.1.exe",
+            "hash": "067273aca66317f667aa04eedc4b5f865e327711a49f939f17028ee2de153b5b"
+        }
+    },
+    "innosetup": true,
+    "bin": "Notchpoint.exe",
+    "shortcuts": [
+        [
+            "Notchpoint.exe",
+            "Notchpoint"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/iamprincejkc/Notchpoint"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/iamprincejkc/Notchpoint/releases/download/v$version/NotchpointSetup-$version.exe"
+            }
+        }
+    }
+}
