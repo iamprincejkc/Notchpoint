@@ -1,5 +1,5 @@
 {
-    "version": "0.2.2",
+    "version": "0.2.3",
     "description": "A notch for Windows 11 showing how much of your Claude, ChatGPT and Gemini usage is left.",
     "homepage": "https://github.com/iamprincejkc/Notchpoint",
     "license": "Proprietary",
@@ -11,8 +11,8 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/iamprincejkc/Notchpoint/releases/download/v0.2.2/NotchpointSetup-0.2.2.exe",
-            "hash": "4ea4e4542827c35b0d2deac68565e6e503120fa4a7725c8660b907451222b79a"
+            "url": "https://github.com/iamprincejkc/Notchpoint/releases/download/v0.2.3/NotchpointSetup-0.2.3.exe",
+            "hash": "21fdd1bbf361cf9ab6b55329df76fb2ec6b9c82b7de625dd1cefa35a14b99fd3"
         }
     },
     "innosetup": true,
