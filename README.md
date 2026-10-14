@@ -17,12 +17,20 @@ Click it and it opens.
 |---|---|---|
 | **Claude** | Claude Code's own credentials | 5-hour session, weekly |
 | **ChatGPT** | Codex CLI's own credentials | monthly |
-| **Gemini** | Antigravity, over loopback | rolling quota |
+| **Gemini** | Antigravity, over loopback | a row per allowance |
 
 Each provider shows a ring only if you have that tool installed.
 A ring never draws an arc when the reading failed, because an empty ring would look like "plenty left", which is the one wrong answer a usage meter must never give.
 
+A figure also disappears once its window resets, rather than sitting there going quietly out of date. A session reading from before its reset is not stale, it is wrong.
+
 It also knows whether Claude Code is **working** or **waiting on you**, and spins the ring while it works.
+
+### When you hit a limit
+
+**It shows even when your usage cannot be read.** If you work in the Claude desktop app, nothing refreshes the Claude Code CLI's credential file, so its token expires within hours and the usage endpoint goes quiet.
+
+Notchpoint also reads the refusals Claude Code records in its own session transcripts, which need no credential at all. So a session or weekly limit appears within a second of hitting it, says when the window reopens, and clears itself when it does.
 
 ## Install
 
@@ -71,7 +79,9 @@ The manifests behind both package managers live in this repo: [`winget/`](winget
 Notchpoint reads the credentials the tools you already use have written for themselves.
 If you are signed in to Claude Code, Codex or Antigravity, the matching ring lights up on its own within a few seconds.
 
-If a ring says "needs sign-in", sign in to that tool the normal way and Notchpoint picks it up on its next read.
+When a sign-in expires, that provider's card shows a **Sign in** button, so you can fix it where you noticed it rather than hunting through settings.
+It starts the provider's own browser flow and Notchpoint picks up the result on its next read.
+
 There is no password field in Notchpoint and there never will be.
 Sign-in opens each vendor's own browser flow, and an app that asks for your Anthropic or OpenAI password directly is indistinguishable from one phishing you.
 
@@ -89,6 +99,7 @@ A few behaviours worth knowing:
 - Rings carry a letter, `C` for Claude and `G` for ChatGPT, so you can tell them apart without relying on colour.
 - A spinning arc means a Claude Code session is working right now.
 - You get a tray balloon at 80% and 100% of any window, once per crossing.
+- A provider only says anything about its state when something is wrong. A healthy card is just names and numbers.
 - It hides completely while a fullscreen game or video owns the screen, because a topmost window costs presentation latency in games.
 - Numbers refresh when you open the notch, when you bring an AI app to the front, and when you sign in to one, as well as on a timer.
 
