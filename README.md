@@ -4,12 +4,12 @@ A notch for Windows 11 that shows how much of your AI usage is left.
 
 It hangs from the top edge of your screen, hides itself until you need it, and costs about 15 MB and no measurable CPU to leave running all day.
 
-![Notchpoint expanded, showing Claude, ChatGPT and Gemini usage](docs/media/notch-expanded.png)
+![Notchpoint expanded, showing Claude, ChatGPT and Gemini usage](docs/media/notch-card.png)
 
 Move the mouse to the top of the screen and it appears.
 Click it and it opens.
 
-![The collapsed notch, three rings on the top edge of the screen](docs/media/notch-collapsed.png)
+![The collapsed notch, three rings on the top edge of the screen](docs/media/notch-rings.png)
 
 ## What it shows
 
