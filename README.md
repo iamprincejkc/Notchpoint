@@ -26,7 +26,16 @@ It also knows whether Claude Code is **working** or **waiting on you**, and spin
 
 ## Install
 
-Download the latest `NotchpointSetup-x.y.z.exe` from the [Releases page](https://github.com/iamprincejkc/Notchpoint/releases/latest) and run it.
+```bash
+winget install JKC.Notchpoint
+```
+
+That is the whole thing - winget is built into Windows 10 and 11, so nothing else is needed.
+`winget upgrade JKC.Notchpoint` updates it later, and `winget uninstall JKC.Notchpoint` removes it.
+
+### Or download it
+
+Grab the latest `NotchpointSetup-x.y.z.exe` from the [Releases page](https://github.com/iamprincejkc/Notchpoint/releases/latest) and run it.
 
 One file, about 11 MB, nothing else to install.
 There is no .NET runtime or other prerequisite, because the app is compiled ahead of time to native code.
@@ -53,11 +62,7 @@ Scoop installs it portably, so it lives under `~\scoop\apps\notchpoint` with no 
 
 Your settings stay in `%APPDATA%\Notchpoint` either way, so they survive both.
 
-### With winget
-
-Not yet.
-The manifests are written and validated, in [`winget/`](winget), but a package only becomes installable by name once Microsoft accepts it into their index, which is a separate review.
-`winget install JKC.Notchpoint` will start working when that lands.
+The manifests behind both package managers live in this repo: [`winget/`](winget) and [`bucket/`](bucket).
 
 ## First run
 
@@ -102,7 +107,11 @@ You can change the notch size, which providers get a ring, whether it starts wit
 
 ## Uninstall
 
-Apps & Features, or the **Uninstall Notchpoint** shortcut in the Start menu.
+```bash
+winget uninstall JKC.Notchpoint
+```
+
+Or Apps & Features, or the **Uninstall Notchpoint** shortcut in the Start menu.
 If you installed it with Scoop, use `scoop uninstall notchpoint` instead.
 
 Your settings at `%APPDATA%\Notchpoint` are kept on purpose, and the uninstaller tells you where they are.
