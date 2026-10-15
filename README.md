@@ -39,7 +39,18 @@ winget install JKC.Notchpoint
 ```
 
 That is the whole thing - winget is built into Windows 10 and 11, so nothing else is needed.
-`winget upgrade JKC.Notchpoint` updates it later, and `winget uninstall JKC.Notchpoint` removes it.
+
+### Updating
+
+```bash
+winget upgrade JKC.Notchpoint
+```
+
+There is no need to close Notchpoint first. The installer closes it, updates it, and opens it again, so it is back on screen as soon as the update finishes.
+This works even if you installed from the download rather than through winget: winget recognises the installed copy either way.
+Updating keeps your settings.
+
+Notchpoint does not update itself or check for updates in the background, so run that now and then to pick up new versions.
 
 ### Or download it
 
@@ -103,11 +114,23 @@ A few behaviours worth knowing:
 - It hides completely while a fullscreen game or video owns the screen, because a topmost window costs presentation latency in games.
 - Numbers refresh when you open the notch, when you bring an AI app to the front, and when you sign in to one, as well as on a timer.
 
+## Where it sits
+
+**Any screen edge, anywhere along it.** The top is the default, but it can hang from the bottom, left or right instead.
+
+- **Drag it** along its edge to move it. A short press still opens the card; it only moves once you drag a few pixels along the edge.
+- **Or set it in Settings**, under Appearance: pick the edge, then slide it along.
+
+Both take effect straight away and are remembered.
+
+On the left and right edges the collapsed notch turns vertical, with its rings stacked, while the expanded card stays the right way up so its text is still readable.
+On the bottom edge it sits just above the taskbar rather than behind it.
+
 ## Settings
 
 Right-click the tray icon and choose **Settings**, or run `Notchpoint.exe settings`.
 
-You can change the notch size, which providers get a ring, whether it starts with Windows, whether it yields to fullscreen apps, and whether the Claude Code hooks are installed.
+You can change the notch size, which edge it sits on and where along it, which providers get a ring, whether it starts with Windows, whether it yields to fullscreen apps, and whether the Claude Code hooks are installed.
 
 ## Privacy
 
